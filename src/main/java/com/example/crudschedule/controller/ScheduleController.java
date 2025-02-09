@@ -22,22 +22,22 @@ public class ScheduleController {
         return ResponseEntity.ok(scheduleService.save(dto));
     }
 
-    @GetMapping("/Schedules")
+    @GetMapping("/schedules")
     public ResponseEntity<List<ScheduleResponseDto>> fingAll() {
         return ResponseEntity.ok(scheduleService.findAll());
     }
 
-    @GetMapping("/Schedules/{id}")
+    @GetMapping("/schedules/{id}")
     public ResponseEntity<ScheduleResponseDto> findOne(@PathVariable Long id) {
         return ResponseEntity.ok(scheduleService.findById(id));
     }
 
-    @PutMapping("/Schedules/{id}")
+    @PutMapping("/schedules/{id}")
     public ResponseEntity<ScheduleResponseDto> update(@PathVariable Long id, @RequestBody ScheduleRequestDto dto) {
         return ResponseEntity.ok(scheduleService.update(id, dto));
     }
 
-    @DeleteMapping("/Schedules/{id}")
+    @DeleteMapping("/schedules/{id}")
     public void delete(@PathVariable Long id) {
         scheduleService.delete(id);
     }
